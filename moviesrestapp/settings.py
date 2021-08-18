@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 from datetime import timedelta
 
@@ -26,7 +27,7 @@ SECRET_KEY = 'django-insecure-md9c6=otmzv@v@^v_3v3t1p&^m#@t2qt=_s!3!c^@vn_9d1uoa
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', ]
 
 
 # Application definition
@@ -133,7 +134,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATIC_ROOT= os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -158,3 +164,19 @@ SIMPLE_JWT = {
 
 
 AUTH_USER_MODEL = 'user_app.User'
+
+
+### Email settings ###
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT  = 587
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+print(EMAIL_HOST_USER)
+print(EMAIL_HOST_PASSWORD)
+print('nihad')
+
+### EMAIL DOMAIN FOR RESET PASSWORD
+
+RESET_PASSWORD_DOMAIN = ''

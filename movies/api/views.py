@@ -7,6 +7,7 @@ from movies.models import Movie,StreamPlatform, Review
 from .serializers import MovieSerializer, PlatformSerializer, ReviewSerializer
 from rest_framework.views import APIView
 from rest_framework import viewsets, permissions
+from .permissions import IsAdminOrReadOnly, IsReviewUserOrReadOnly
 
 # Create your views here.
 # AV suffix stands for API VIEW
@@ -72,12 +73,14 @@ Movies
 """
 
 class MoviesListGV(generics.ListCreateAPIView):
-    permission_classes = [permissions.IsAuthenticated]
+    # permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsAdminOrReadOnly]
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
 
 
 class MovieDetailGV(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [IsAdminOrReadOnly,IsAdminOrReadOnly]
     queryset = Movie.objects.all()
     serializer_class = MovieSerializer
     

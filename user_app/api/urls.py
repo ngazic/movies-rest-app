@@ -17,4 +17,7 @@ urlpatterns = [
     # JWT TOKEN ROUTES
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('password/request/', views.RequestPasswordResetEmail.as_view(), name='password_reset_request'),
+    path('password/request/<uidb64>/<token>/', views.PasswordTokenValidationAPI.as_view(), name='password_reset_confirm'),
+    path('password/reset/', views.SetNewPasswordAPIView.as_view(), name='password_reset_request'),
 ]

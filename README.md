@@ -19,3 +19,12 @@ INSTALLED_APPS = [
 3. Simple JWT  
 
 4.https://github.com/axnsan12/drf-yasg 
+
+4. Send reset password email to your
+   
+   For this we could also use packages: [text](https://github.com/anexia-it/django-rest-passwordreset) or [django rest authentication](https://django-rest-auth.readthedocs.io/en/latest/)
+
+5. Import .env variables
+   ```
+   source .env
+   ```

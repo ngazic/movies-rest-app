@@ -8,7 +8,7 @@ router = DefaultRouter()
 router.register('stream', views.StreamPlatformVS, basename='streamplatform')
 
 urlpatterns = [
-    path('list/', views.MoviesListGV.as_view(), name='movie-list'),
+    path('', views.MoviesListGV.as_view(), name='movie-list'),
     path('<int:pk>/', views.MovieDetailGV.as_view(), name='movie-detail'),
     path('', include(router.urls)),
     path('<int:pk>/review/', views.ReviewListGV.as_view(), name='review-list'),

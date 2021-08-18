@@ -7,7 +7,7 @@ from django.conf import settings
 
 class User(AbstractUser):
     # username = models.CharField(blank=True, null=True, max_length=50)
-    email = models.EmailField(_('email address'), blank=False)
+    email = models.EmailField(_('email address'), blank=False, unique=True)
     tel_number = models.CharField(max_length=20)
     contract_id = models.CharField(max_length=100)
     address = models.CharField(max_length=50)
