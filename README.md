@@ -16,13 +16,13 @@ INSTALLED_APPS = [
     'rest_framework',
 ]
 ```
-3. Simple JWT  
+3. [Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#installation)
 
 4.https://github.com/axnsan12/drf-yasg 
 
 4. Send reset password email to your
    
-   For this we could also use packages: [text](https://github.com/anexia-it/django-rest-passwordreset) or [django rest authentication](https://django-rest-auth.readthedocs.io/en/latest/)
+   For this we could also use packages: [django-rest-passwordreset](https://github.com/anexia-it/django-rest-passwordreset) or [django rest authentication](https://django-rest-auth.readthedocs.io/en/latest/)
 
 5. Import .env variables
    ```
