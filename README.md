@@ -18,7 +18,7 @@ INSTALLED_APPS = [
 ```
 3. [Simple JWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#installation)
 
-4.https://github.com/axnsan12/drf-yasg 
+4.[drf-yasg - Yet another Swagger generator](https://github.com/axnsan12/drf-yasg )
 
 4. Send reset password email to your
    
